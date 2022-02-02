@@ -1,0 +1,50 @@
+Nuts and Bolts Problem 
+Medium Accuracy: 52.04% Submissions: 27491 Points: 4
+Given a set of N nuts of different sizes and N bolts of different sizes. There is a one-one mapping between nuts and bolts. Match nuts and bolts efficiently.
+
+Comparison of a nut to another nut or a bolt to another bolt is not allowed. It means nut can only be compared with bolt and bolt can only be compared with nut to see which one is bigger/smaller.
+The elements should follow the following order ! # $ % & * @ ^ ~ .
+
+Example 1:
+
+Input: 
+N = 5
+nuts[] = {@, %, $, #, ^}
+bolts[] = {%, @, #, $ ^}
+Output: 
+# $ % @ ^
+# $ % @ ^
+Example 2:
+
+Input: 
+N = 9
+nuts[] = {^, &, %, @, #, *, $, ~, !}
+bolts[] = {~, #, @, %, &, *, $ ,^, !}
+Output: 
+! # $ % & * @ ^ ~
+! # $ % & * @ ^ ~
+-----------------------------------------------------------------
+
+class Solution {
+    void matchPairs(char nuts[], char bolts[], int n) {
+        // code here
+          char[] ord={'!','#','$','%','&','*','@','^','~'};
+       // convert character array nuts[] to string
+       String nut=Arrays.toString(nuts);
+       int j=0;
+       for(int i=0;i<ord.length;i++)
+       {
+           // verify the char presence with the predefined array
+           if(nut.contains(Character.toString(ord[i])))
+           {
+               nuts[j]=ord[i];
+               bolts[j]=ord[i];
+               j++;
+               if(j==n)
+               {
+                   break;
+               }
+           }
+       }
+    }
+}
