@@ -1,0 +1,11 @@
+
+class Geeks{
+    
+    // Function to print each word in single line
+    static void printIndividualLine(){
+        System.out.print("Geeks\n"+"for\n"+"Geeks");
+        // Your code here
+        
+    }
+    
+}
