@@ -1,0 +1,20 @@
+class Solution 
+{ 
+    String firstRepChar(String s) 
+    { 
+       Stack<Character> stack=new Stack<Character>();
+       String res="";
+        for(int i =0 ; i<s.length() ; i++){
+        
+            if(!stack.contains(s.charAt(i))){
+                stack.push(s.charAt(i));
+            }else{
+                res+=s.charAt(i);
+                return res;
+            }
+        }
+        
+       return "-1";
+       
+    }
+} 
