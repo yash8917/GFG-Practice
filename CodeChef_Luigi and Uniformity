@@ -1,0 +1,40 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+    public static void main(String[] args){
+		// your code goes here
+	Scanner sc=new Scanner(System.in);
+	    int test=sc.nextInt();
+	    while(test>0){
+	        int Num=sc.nextInt();
+	        int arr[]=new int[Num];
+	        int max=Integer.MAX_VALUE;
+	        for (int i=0;i<Num ;i++ ){
+	            arr[i]=sc.nextInt();
+	            if(max>arr[i]) max=arr[i];
+	        } 
+	        
+	        int a=0;int t=0;
+	        for (int i=0;i<Num ;i++ ) {
+	            if(max!=arr[i]){
+	                if (arr[i]%max==0) a++;
+	                else {
+	                    t=1;break;
+	                }
+	            }
+	           
+	        } 
+	        
+	        if (t==1) System.out.println(Num);
+	            else System.out.println(a);
+	        test--;
+	        
+	    }
+}
+}
